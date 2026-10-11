@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BelajarBareng AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="Pengaturan belajar">
+      <div class="logo">
+        <span class="logo-mark" aria-hidden="true">B</span>
+        <div>
+          <h1>BelajarBareng AI</h1>
+          <p>Tutor belajar pribadi</p>
+        </div>
+      </div>
+
+      <div class="settings">
+        <div class="field">
+          <label for="subject">Mata pelajaran</label>
+          <select id="subject">
+            <option value="umum">Umum</option>
+            <option value="matematika">Matematika</option>
+            <option value="fisika">Fisika</option>
+            <option value="kimia">Kimia</option>
+            <option value="biologi">Biologi</option>
+            <option value="inggris">Bahasa Inggris</option>
+            <option value="informatika">Informatika</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="level">Jenjang</label>
+          <select id="level">
+            <option value="sma">SMA/SMK</option>
+            <option value="kuliah">Mahasiswa tahun pertama</option>
+          </select>
+        </div>
+
+        <fieldset class="field">
+          <legend>Gaya bahasa</legend>
+          <div class="segmented">
+            <input type="radio" name="style" id="style-santai" value="santai" checked />
+            <label for="style-santai">Santai</label>
+            <input type="radio" name="style" id="style-formal" value="formal" />
+            <label for="style-formal">Formal</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="quizBtn" class="btn primary">Buat kuis dari topik ini</button>
+        <button type="button" id="clearBtn" class="btn ghost">Mulai percakapan baru</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h2>Sesi belajar</h2>
+        <div id="context" class="tags" aria-label="Pengaturan sesi saat ini"></div>
+      </header>
+
+      <div id="thread" class="thread" aria-live="polite"></div>
+
+      <div class="composer-wrap">
+        <form id="composer" class="composer">
+          <label for="input" class="sr-only">Tulis pertanyaanmu</label>
+          <textarea
+            id="input"
+            rows="1"
+            maxlength="2000"
+            placeholder="Tulis pertanyaan atau topik yang ingin kamu pahami"
+          ></textarea>
+          <button type="submit" id="sendBtn" class="btn primary">Kirim</button>
+        </form>
+        <p class="hint">Bela bisa keliru. Periksa kembali informasi yang penting.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
